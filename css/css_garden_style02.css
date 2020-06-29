@@ -1,207 +1,369 @@
-/* css Zen Garden default style v1.02 */
-/* css released under Creative Commons License - http://creativecommons.org/licenses/by-nc-sa/1.0/  */
-
-/* This file based on 'Tranquille' by Dave Shea */
-/* You may use this file as a foundation for any new work, but you may find it easier to start from scratch. */
-/* Not all elements are defined in this file, so you'll most likely want to refer to the xhtml as well. */
-
-/* Your images should be linked as if the CSS file sits in the same folder as the images. ie. no paths. */
-
-/* basic elements */
-html {
-   margin: 0;
-   padding: 0;
-}
+html,
 body {
-   font: 75% georgia, sans-serif;
-   line-height: 1.88889;
-   color: #555753;
-   background: #fff url(http://csszengarden.com/001/blossoms.jpg) no-repeat bottom right;
+   width: 100vw;
+   height: 100vh;
+   overflow-x: hidden;
+}
+
+* {
    margin: 0;
    padding: 0;
-}
-p {
-   margin-top: 0;
-   text-align: justify;
-}
-h3 {
-   font: italic normal 1.4em georgia, sans-serif;
-   letter-spacing: 1px;
-   margin-bottom: 0;
-   color: #7d775c;
-}
-a:link {
-   font-weight: bold;
-   text-decoration: none;
-   color: #b7a5df;
-}
-a:visited {
-   font-weight: bold;
-   text-decoration: none;
-   color: #d4cddc;
-}
-a:hover,
-a:focus,
-a:active {
-   text-decoration: underline;
-   color: #9685ba;
-}
-abbr {
-   border-bottom: none;
+   list-style: none;
+   font-family: 'Noto Sans TC', 'Microsoft JhengHei', sans-serif;
+   box-sizing: border-box;
 }
 
-/* ID */
-
-#page-wrapper{
-   width:100vw;
-   height: 100vh;
-   position: fixed;
-}
-
-#container{
+#container {
    overflow-x: hidden;
-   overflow-y:scroll ;
 }
 
+a {
+   color: white;
+}
 
-/* specific divs */
-.page-wrapper {
-   background: url(http://csszengarden.com/001/zen-bg.jpg) no-repeat top left;
-   padding: 0 175px 0 110px;
-   margin: 0;
+.container {
+   width: 1920px;
+   height: 100%;
+   overflow: auto;
+}
+
+.title {
+   color: rgb(250, 235, 215);
+   font-size: 60px;
+   background-color: green;
+   width: 90%;
+   height: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
    position: relative;
 }
 
-.intro {
-   min-width: 470px;
+.title img {
+   position: relative;
+   z-index: 2;
+}
+
+.title h1 {
+   position: absolute;
+   z-index: 10;
+   transform: translateY(-40px);
+   text-shadow: -1px 0 black, 0 1px black,
+      1px 0 black, 0 -1px black
+}
+
+.frame {
+   z-index: 10;
+   color: green;
+   font-size: 20px;
+}
+
+.top {
+   background-color: rgb(250, 235, 215);
+   border-top: 12px solid brown;
+   border-right: 12px solid brown;
+   border-left: 12px solid brown;
+   position: fixed;
+   width: 100%;
+   left: 0;
+   top: 0;
+   z-index: 12;
+}
+
+.marquee {
+   border-top: 5px solid rgb(73, 53, 15);
+   border-right: 5px solid rgb(73, 53, 15);
+   border-left: 5px solid rgb(73, 53, 15);
+   border-bottom: 5px solid rgb(73, 53, 15);
+}
+
+.bottom {
+   background-color: rgb(250, 235, 215);
+   border-bottom: 12px solid brown;
+   border-right: 12px solid brown;
+   border-left: 12px solid brown;
+   position: fixed;
+   width: 100%;
+   left: 0;
+   bottom: 0;
+   z-index: 12;
+}
+
+.a {
+   width: 100%;
+   border-top: 5px solid rgb(73, 53, 15);
+   border-right: 5px solid rgb(73, 53, 15);
+   border-left: 5px solid rgb(73, 53, 15);
+   border-bottom: 5px solid rgb(73, 53, 15);
+   display: flex;
+   justify-content: center;
+   line-height: 35px;
+}
+
+.a a {
+   text-decoration: none;
+   margin-right: 1rem;
+}
+
+
+.bottom a {
+   color: green;
+}
+
+.left {
+   height: 100vh;
+   width: 55px;
+   background-color: rgb(73, 53, 15);
+   border-left: 12px solid brown;
+   position: fixed;
+   top: 0;
+   left: 0;
+   z-index: 10;
+}
+
+.left-top {
+   background-color: rgb(250, 235, 215);
+   margin-top: 10rem;
+   transform: skewY(12deg);
+   height: 400px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   position: relative;
    width: 100%;
 }
 
-header h1 {
-   background: transparent url(http://csszengarden.com/001/h1.gif) no-repeat top left;
-   margin-top: 10px;
-   display: block;
-   width: 219px;
-   height: 87px;
-   float: left;
-
-   text-indent: 100%;
-   white-space: nowrap;
-   overflow: hidden;
-}
-header h2 {
-   background: transparent url(http://csszengarden.com/001/h2.gif) no-repeat top left;
-   margin-top: 58px;
-   margin-bottom: 40px;
-   width: 200px;
-   height: 18px;
-   float: right;
-
-   text-indent: 100%;
-   white-space: nowrap;
-   overflow: hidden;
-}
-header {
-   padding-top: 20px;
-   height: 87px;
-}
-
-.summary {
-   clear: both;
-   margin: 20px 20px 20px 10px;
-   width: 160px;
-   float: left;
-}
-.summary p {
-   font: italic 1.1em/2.2 georgia;
-   text-align: center;
-}
-
-.preamble {
-   clear: right;
-   padding: 0px 10px 0 10px;
-}
-.supporting {
-   padding-left: 10px;
-   margin-bottom: 40px;
-}
-
-footer {
-   text-align: center;
-}
-footer a:link,
-footer a:visited {
-   margin-right: 20px;
-}
-
-.sidebar {
-   margin-left: 600px;
+.left-top::after {
+   content: " ";
+   background-color: green;
    position: absolute;
+   width: 100%;
+   height: 100px;
+   bottom: -100px;
+}
+
+
+.left-top h1 {
+   transform: rotate(360deg) skewY(12deg);
+   writing-mode: vertical-lr;
+
+}
+
+.right {
+   height: 100vh;
+   width: 55px;
+   background-color: rgb(73, 53, 15);
+   border-right: 12px solid brown;
+   position: fixed;
    top: 0;
    right: 0;
-}
-.sidebar .wrapper {
-   font: 10px verdana, sans-serif;
-   background: transparent url(http://csszengarden.com/001/paper-bg.jpg) top left repeat-y;
-   padding: 10px;
-   margin-top: 150px;
-   width: 130px;
-}
-.sidebar h3.select {
-   background: transparent url(http://csszengarden.com/001/h3.gif) no-repeat top left;
-   margin: 10px 0 5px 0;
-   width: 97px;
-   height: 16px;
-
-   text-indent: 100%;
-   white-space: nowrap;
-   overflow: hidden;
-}
-.sidebar h3.archives {
-   background: transparent url(http://csszengarden.com/001/h5.gif) no-repeat top left;
-   margin: 25px 0 5px 0;
-   width: 57px;
-   height: 14px;
-
-   text-indent: 100%;
-   white-space: nowrap;
-   overflow: hidden;
-}
-.sidebar h3.resources {
-   background: transparent url(http://csszengarden.com/001/h6.gif) no-repeat top left;
-   margin: 25px 0 5px 0;
-   width: 63px;
-   height: 10px;
-
-   text-indent: 100%;
-   white-space: nowrap;
-   overflow: hidden;
+   z-index: 10;
 }
 
-.sidebar ul {
-   margin: 0;
-   padding: 0;
-}
-.sidebar li {
-   line-height: 1.3em;
-   background: transparent url(http://csszengarden.com/001/cr1.gif) no-repeat top center;
-   display: block;
-   padding-top: 5px;
-   margin-bottom: 5px;
-   list-style-type: none;
-}
-.sidebar li a:link {
-   color: #988f5e;
-}
-.sidebar li a:visited {
-   color: #b3ae94;
+.right-top {
+   background-color: rgb(250, 235, 215);
+   margin-top: 9rem;
+   transform: skewY(12deg);
+   height: 400px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   position: relative;
+   width: 100%;
+   top: 130px;
 }
 
-.extra1 {
-   background: transparent url(http://csszengarden.com/001/cr2.gif) top left no-repeat;
+.right-top::after {
+   content: " ";
+   background-color: green;
    position: absolute;
-   top: 40px;
+   width: 100%;
+   height: 30px;
+   top: -50px;
+}
+
+.right-top h2 {
+   transform: rotate(360deg) skewY(12deg);
+   writing-mode: vertical-lr;
+}
+
+.content {
+   z-index: 100;
+   background-color: brown;
+   overflow-y: scroll;
+}
+
+#sidebar {
+   position: fixed;
+   height: 100vh;
+   top: 0;
    right: 0;
-   width: 148px;
-   height: 110px;
+   z-index: 9;
+   background-color: brown;
+   border-left: 5px solid white;
+   display: flex;
+   justify-content: space-around;
+   flex-direction: column;
+   color: rgb(73, 53, 15);
+   font-weight: bolder;
+}
+
+#wrapper a {
+   text-decoration: none;
+}
+
+#wrapper h3 {
+   color: rgb(255, 178, 44);
+   background-color: green;
+   margin-top: 1rem;
+}
+
+.five {
+   width: 260px;
+   height: 220px;
+   background: rgb(247, 229, 67);
+   -webkit-clip-path: polygon(0% 38.31%, 50% 0%, 100% 38.31%, 80.86% 100%, 19.14% 100%);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+}
+
+.five a {
+   color: green;
+}
+
+.wrapper {
+   width: 80%;
+   padding-top: 4rem;
+   padding-left: 0.5rem;
+}
+
+.text {
+   padding-top: 4rem;
+   padding-left: 5rem;
+   padding-right: 22rem;
+}
+
+#zen-preamble {
+   width: 90%;
+   padding-left: 5rem;
+   padding-top: 2rem;
+   padding-bottom: 2rem;
+   padding-right: 10rem;
+   background-color: green;
+   border: 5px solid brown;
+}
+
+#zen-preamble h3 {
+   text-align: center;
+   color: white;
+   font-weight: 700;
+   margin-bottom: 2rem;
+   position: relative;
+   display: flex;
+   justify-content: center;
+
+}
+
+#zen-preamble h3::after {
+   content: "☺";
+   position: absolute;
+   right: 1px;
+   font-size: 40px;
+   top: -20px;
+}
+
+#zen-preamble h3::before {
+   content: "☺";
+   position: absolute;
+   left: 1px;
+   font-size: 40px;
+   top: -20px;
+}
+
+#zen-preamble p {
+   letter-spacing: 2px;
+   transform: skew(-12deg);
+   color: rgb(255, 178, 44);
+}
+
+#zen-explanation {
+   width: 90%;
+   height: 50vh;
+   display: flex;
+}
+
+.explanation01 {
+   width: 50%;
+   background: repeating-linear-gradient(55deg, #fb3 0 10px, green 0 40px);
+   line-height: 430px;
+   font-size: 40px;
+   color: rgb(250, 235, 215);
+   text-align: center;
+}
+
+.explanation02 {
+   width: 50%;
+   margin-left: 6px;
+   padding-left: 2rem;
+   padding-top: 2rem;
+   padding-right: 10rem;
+   background-color: rgb(250, 235, 215);
+   font-size: 20px;
+   font-weight: bolder;
+}
+
+#zen-participation {
+   width: 90%;
+   height: 50vh;
+   display: flex;
+   flex-direction: column;
+}
+
+.participation01 {
+   margin-top: 5px;
+   width: 100%;
+   height: 100%;
+   background-image: url("https://picsum.photos/1920/400/?random=3");
+   background-color: rgba(8, 6, 6, 0.9);
+   background-repeat: no-repeat;
+   background-size: cover;
+   color: white;
+   text-shadow: 1px 1px 1px 1px #333;
+   padding: 5rem;
+   padding-right: 10rem;
+}
+
+.participation01 h3 {
+   text-align: center;
+   margin-bottom: 2rem;
+
+}
+
+#zen-benefits {
+   float: left;
+   width: 20%;
+   height: 350px;
+   background-color: rgb(250, 235, 215);
+   padding-left: 5rem;
+   padding-top: 2rem;
+}
+
+#zen-requirements {
+   float: right;
+   height: 350px;
+   width: 80%;
+   background-color: rgb(250, 235, 215);
+   /* border-top: brown 15px solid; */
+   border-left: brown 15px solid;
+   border-right: brown 310px solid;
+   padding-right: 3rem;
+   padding-left: 1rem;
+   padding-top: 1rem;
+   padding-bottom: 2rem;
+}
+
+#zen-requirements a {
+   color: cornflowerblue;
 }
